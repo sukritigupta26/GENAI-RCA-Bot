@@ -22,7 +22,7 @@ Fully auditable actions with detailed logs
 Quick Start (60 seconds)
 Bash
 ## 1. Clone the repository
-git clone https://github.com/xai-devops/genai-rca-agent.git
+git clone <repo link>
 
 ## 2. Go to the project directory
 cd genai-rca-agent
