@@ -1,4 +1,5 @@
-GENAI RCA Agent
+# GENAI RCA Agent
+
 Autonomous Root Cause Analysis & Remediation Agent for DevOps & SRE
 An intelligent AI agent that ingests logs from Kubernetes, Jenkins, Ansible Tower, or any CI/CD system, performs root cause analysis, and automatically remediates common issues by restarting pods, triggering Jenkins jobs, scaling deployments, launching Ansible playbooks, and more.
 Built with FastAPI + LangGraph (ReAct) and supports xAI Grok, GPT-4o, or Claude.
@@ -19,17 +20,18 @@ Fully auditable actions with detailed logs
 
 
 Quick Start (60 seconds)
-Bash# 1. Clone the repository
+Bash
+## 1. Clone the repository
 git clone https://github.com/xai-devops/genai-rca-agent.git
 
-# 2. Go to the project directory
+## 2. Go to the project directory
 cd genai-rca-agent
 
-# 3. Copy and edit environment variables
+## 3. Copy and edit environment variables
 cp .env.example .env
-# ← Edit .env with your API keys and credentials
+### ← Edit .env with your API keys and credentials
 
-# 4. Start the agent
+## 4. Start the agent
 docker compose up --build -d
 The agent will be available at http://localhost:8000
 
@@ -70,20 +72,20 @@ env# LLM Configuration (recommended: xAI Grok)
 LLM_PROVIDER=xai
 XAI_API_KEY=xai-...
 
-# Kubernetes (use in-cluster for production)
+## Kubernetes (use in-cluster for production)
 K8S_IN_CLUSTER=true
 
-# Jenkins
+## Jenkins
 JENKINS_URL=http://jenkins.yourcompany.com:8080
 JENKINS_USERNAME=admin
 JENKINS_API_TOKEN=your-token-here
 
-# Ansible Tower
+## Ansible Tower
 ANSIBLE_TOWER_URL=https://tower.yourcompany.com
 ANSIBLE_TOWER_USERNAME=admin
 ANSIBLE_TOWER_PASSWORD=your-password
 
-# Optional: Notifications
+## Optional: Notifications
 SLACK_WEBHOOK_URL=https://hooks.slack.com/services/...
 
 Available Tools (Remediation Actions)
