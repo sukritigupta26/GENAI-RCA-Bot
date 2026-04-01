@@ -1,6 +1,7 @@
 from temporalio import activity
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage, ToolMessage
+from typing import List
 import os
 from dotenv import load_dotenv
 

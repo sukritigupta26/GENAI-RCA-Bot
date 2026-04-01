@@ -3,6 +3,10 @@ from pydantic import BaseModel
 import uvicorn
 import uuid
 from datetime import timedelta
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 import asyncio
 import json
 
@@ -10,6 +14,15 @@ import json
 from temporalio.client import Client
 from temporal_app.workflows import RCAAgentWorkflow
 from temporal_app.shared import RCAInput
+
+# Try to import Kubernetes tools, but continue if not available
+try:
+    from app.tools.kubernetes import restart_kubernetes_pod, scale_deployment
+    KUBERNETES_AVAILABLE = True
+except ImportError:
+    KUBERNETES_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.warning("Kubernetes tools not available, some RCA actions may be limited")
 
 app = FastAPI(title="GENAI RCA Agent - Temporal Edition")
 
